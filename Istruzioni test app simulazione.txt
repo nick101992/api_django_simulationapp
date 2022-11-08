@@ -1,0 +1,72 @@
+1)INSTALLAZIONE PYTHON:
+
+-Scaricare python 3.9 da questo link: https://www.python.org/ftp/python/3.9.5/python-3.9.5-amd64.exe (versione per windows)
+-Aprire file installazione python 3.9, 
+-Mettere la spunta su "add python to path" e procedere all'installazione
+
+2)SETTAGGIO DJANGO:
+
+-Aprire file zip ed estrarre la cartella "App_simulazione" sul desktop(o un qualsiasi altro percorso portando però attenzione per i prossimi comandi)
+-Aprire prompt dei comandi
+-Selezionare la cartella copiata con il comando: cd C:\Users\utente\Desktop\App_simulazione (a seconda del percorso in cui si è estratta la cartella)
+-Creare un ambiente virtuale con comando: python -m venv venv_newenv
+-Digitare comando: cd venv_newenv/scripts
+-Digitare comando: activate (comparirà sul prompt l'ambiente virtuale tra parentesi prima della linea di comando)
+-Digitare comando per entrare nella cartella del progetto django: cd C:\Users\utente\Desktop\App_simulazione\simulation_app
+-Digitare comando: pip list (vediamo le dipendenze installate che sono quelle di default)
+-Digitare comando: pip install -r requirements.txt (File in cui ci sono tutte le dipendenze necessarie da installare)
+-Digitare comando: pip list (ora vediamo tutte le dipendenze che abbiamo installato con il comando precedente)
+-Digitare comando: python manage.py runserver (avviamo django)
+
+A questo punto dovrebbe comparire sul prompt questo messaggio:
+"System check identified no issues (0 silenced).
+May 08, 2021 - 16:35:37
+Django version 3.2.2, using settings 'simulation_app.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK."
+
+3)TEST APPLICAZIONE:
+
+-Aprire il browser e digitare http://127.0.0.1:8000/accounts/login/
+
+-Eseguire l'accesso con l'utente: 
+  -User:admin 
+  -Pass:simulazione(tutto minuscolo)
+
+-Verremo reindirizzati al url: http://127.0.0.1:8000/api/system_model/ (Ho settato questo url nel file settings.py)
+-Da qui in poi possiamo testare i vari endpoints delle nostre api: (IMPORTANTE: Verranno visualizzati solo i modelli dell'utente admin con cui si è eseguito l'accesso)
+  -http://127.0.0.1:8000/api/system_model/
+  -http://127.0.0.1:8000/api/system_model/1/ (Il numero rappresenta l'id del modello visibile nella lista all'url http://127.0.0.1:8000/api/system_model/)
+  -http://127.0.0.1:8000/api/simulation_model/
+  -http://127.0.0.1:8000/api/simulation_model/1/
+  -http://127.0.0.1:8000/api/simulation_code/
+  -http://127.0.0.1:8000/api/simulation_code/1/
+  -http://127.0.0.1:8000/api/simul_exp/
+  -http://127.0.0.1:8000/api/simul_exp/1/
+  -http://127.0.0.1:8000/api/simul_exp/1/outputs/
+
+-Si può eseguire lo stesso test accedendo con l'utente: (Accediamo dall'url http://127.0.0.1:8000/accounts/login/)
+  -User:user1
+  -Pass:simulazione1(tutto minuscolo)
+
+  endpoint user1:
+  -http://127.0.0.1:8000/api/system_model/
+  -http://127.0.0.1:8000/api/system_model/2/
+  -http://127.0.0.1:8000/api/simulation_model/
+  -http://127.0.0.1:8000/api/simulation_model/2/
+  -http://127.0.0.1:8000/api/simulation_code/
+  -http://127.0.0.1:8000/api/simulation_code/2/
+  -http://127.0.0.1:8000/api/simul_exp/
+  -http://127.0.0.1:8000/api/simul_exp/2/
+  -http://127.0.0.1:8000/api/simul_exp/2/outputs/
+
+
+-Per visualizzare il pannello di amministrazione con le varie app andare a questo url: http://127.0.0.1:8000/admin/ (Solo l'utente admin può accedere dato che è un superuser)
+
+
+4)INSTALLAZIONE ATOM TEXT EDITOR:(facoltativo)
+
+Link download: https://atom.io/download/windows_x64
+Per scrivere il codice ho usato questo editor di testo e IDE open source, basta scaricarlo,installarlo e aprire la cartella App_Simulazione per
+visualizzare le varie app
+ 
