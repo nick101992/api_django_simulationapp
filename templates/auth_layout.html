@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Simulation App</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <style media="screen">
+            .login-form-container {
+                width: 300px;
+                margin: auto;
+            }
+
+            .registration-form-container{
+                width: 400px;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="auth-box text-center">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+    </body>
+</html>
